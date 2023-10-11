@@ -4,6 +4,8 @@
     "semi": ["error", "always"],
     "indent": ["error", 2],
     "jsx-quotes": ["error", "prefer-double"],
+    "quotes": [2, "single", { "avoidEscape": true }],
+    "key-spacing": ["error", { "beforeColon": false }],
     "react/react-in-jsx-scope": "off",
     "react/jsx-max-props-per-line": ["error"],
     "react/jsx-indent-props": ["error", "first"],

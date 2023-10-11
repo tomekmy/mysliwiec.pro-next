@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import { Textillate } from 'textillate-react';
 
@@ -34,7 +34,7 @@ const Home = () => {
         <Textillate
           className="text-2xl"
           option={{
-            in: { effect:'fadeInRight', shuffle:true },
+            in: { effect: 'fadeInRight', shuffle: true },
           }}
         >
           Witaj.
