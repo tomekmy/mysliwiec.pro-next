@@ -1,4 +1,6 @@
-import Image from 'next/image'
+"use client"
+
+import { Textillate } from 'textillate-react';
 
 export default function Home() {
   return (
@@ -22,11 +24,16 @@ export default function Home() {
         <div>bottom</div>
       </div>
       <div className="grid grid-rows-[1fr_80px]">
-        <div className="text-2xl">
+        <Textillate
+          className="text-2xl"
+          option={{
+            in: {effect:'fadeInRight', shuffle:true},
+          }}
+        >
           Witaj.
           Jestem Front-End Developerem.
           Zajmuję się kodowaniem stron i aplikacji internetowych.
-        </div>
+        </Textillate>
         <div className="text-right">language</div>
       </div>
       <div>right</div>
