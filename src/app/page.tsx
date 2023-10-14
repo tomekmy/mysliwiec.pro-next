@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { Textillate } from "textillate-react";
+import { motion } from "framer-motion"
 
 const Home = () => {
   return (
@@ -35,18 +36,30 @@ const Home = () => {
           </h2>
         </div>
         <ul className="text-2xl hover:[&>li]:text-red-700 [&>li]:w-fit [&>li]:my-1.5">
-          <li>
+          <motion.li
+            whileHover={{ scale: 1.1 }}
+            transition={{ type: "spring", stiffness: 400, damping: 10 }}
+          >
             <Link href="/">START</Link>
-          </li>
-          <li>
+          </motion.li>
+          <motion.li
+            whileHover={{ scale: 1.1 }}
+            transition={{ type: "spring", stiffness: 400, damping: 10 }}
+          >
             <Link href="/about">O MNIE</Link>
-          </li>
-          <li>
+          </motion.li>
+          <motion.li
+            whileHover={{ scale: 1.1 }}
+            transition={{ type: "spring", stiffness: 400, damping: 10 }}
+          >
             <Link href="/portfolio">PORTFOLIO</Link>
-          </li>
-          <li>
+          </motion.li>
+          <motion.li
+            whileHover={{ scale: 1.1 }}
+            transition={{ type: "spring", stiffness: 400, damping: 10 }}
+          >
             <Link href="/contact">KONTAKT</Link>
-          </li>
+          </motion.li>
         </ul>
         <div>bottom</div>
       </div>
