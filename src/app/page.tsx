@@ -1,8 +1,14 @@
 "use client";
 
+import { useContext } from "react";
 import { Textillate } from "textillate-react";
+import { Animation } from "./context";
 
 const Home = () => {
+  const animation = useContext(Animation);
+
+  console.log("animation", animation);
+
   return (
     <>
       {typeof window !== "undefined" && (
@@ -53,6 +59,7 @@ const Home = () => {
                 in: {
                   effect: "bounceIn",
                   delay: 30,
+                  callback: () => animation.setIsMainAnimationPlaying(false),
                 },
                 out: {
                   effect: "hinge",
