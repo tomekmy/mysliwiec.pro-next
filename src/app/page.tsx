@@ -1,13 +1,21 @@
 "use client";
 
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Textillate } from "textillate-react";
 import { Animation } from "./context";
 
 const Home = () => {
   const animation = useContext(Animation);
+  const [textillateController, setTextillateController] = useState({});
 
-  console.log("animation", animation);
+  useEffect(() => {
+    //@ts-ignore
+    if (!animation.isMainAnimationPlaying && textillateController.out) {
+      //@ts-ignore
+      textillateController.out();
+    }
+    console.log("animation", animation);
+  }, [animation, textillateController]);
 
   return (
     <>
@@ -15,6 +23,7 @@ const Home = () => {
         <>
           <p className="pb-3">
             <Textillate
+              controller={setTextillateController}
               option={{
                 in: {
                   effect: "bounceIn",

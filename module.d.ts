@@ -1,1 +1,1 @@
-declare module 'textillate-react';
+declare module "textillate-react";

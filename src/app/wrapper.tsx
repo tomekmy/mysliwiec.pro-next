@@ -3,6 +3,7 @@
 import { useState, type ReactNode } from "react";
 import Logo from "@/components/logo";
 import Menu from "@/components/menu";
+import { AnimatePresence } from "framer-motion";
 import { Animation } from "@/app/context";
 
 const Wrapper = ({ children }: { children: ReactNode }) => {
@@ -32,7 +33,7 @@ const Wrapper = ({ children }: { children: ReactNode }) => {
         </div>
         <div className="grid grid-rows-[1fr_80px]">
           <main className="text-3xl w-[34rem] relative left-[17%] pt-44">
-            {children}
+            <AnimatePresence>{children}</AnimatePresence>
           </main>
           <div className="text-right">language</div>
         </div>

@@ -1,5 +1,19 @@
-const About = () => {
-  return <div>contact</div>;
+"use client";
+
+import { motion } from "framer-motion";
+
+const Contact = () => {
+  return (
+    <motion.div
+      key="contact"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 2 }}
+    >
+      Contact
+    </motion.div>
+  );
 };
 
-export default About;
+export default Contact;
