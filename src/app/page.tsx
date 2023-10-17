@@ -1,29 +1,15 @@
 "use client";
 
-import { useContext, useEffect, useState } from "react";
 import { Textillate } from "textillate-react";
-import { Animation } from "./context";
+import { motion } from "framer-motion";
 
 const Home = () => {
-  const animation = useContext(Animation);
-  const [textillateController, setTextillateController] = useState({});
-
-  useEffect(() => {
-    //@ts-ignore
-    if (!animation.isMainAnimationPlaying && textillateController.out) {
-      //@ts-ignore
-      textillateController.out();
-    }
-    console.log("animation", animation);
-  }, [animation, textillateController]);
-
   return (
     <>
       {typeof window !== "undefined" && (
         <>
           <p className="pb-3">
             <Textillate
-              controller={setTextillateController}
               option={{
                 in: {
                   effect: "bounceIn",
@@ -68,7 +54,6 @@ const Home = () => {
                 in: {
                   effect: "bounceIn",
                   delay: 30,
-                  callback: () => animation.setIsMainAnimationPlaying(false),
                 },
                 out: {
                   effect: "hinge",

@@ -3,8 +3,6 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { usePathname } from "next/navigation";
-import { useContext } from "react";
-import { Animation } from "../app/context";
 
 const ROUTES = [
   {
@@ -27,7 +25,6 @@ const ROUTES = [
 
 const Menu = () => {
   const pathname = usePathname();
-  const animation = useContext(Animation);
 
   const handlePageChange = () => {
     if (pathname == "/") {
