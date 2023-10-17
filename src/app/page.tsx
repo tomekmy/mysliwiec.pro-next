@@ -5,7 +5,13 @@ import { motion } from "framer-motion";
 
 const Home = () => {
   return (
-    <>
+    <motion.div
+      key="main"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 2 }}
+    >
       {typeof window !== "undefined" && (
         <>
           <p className="pb-3">
@@ -69,7 +75,7 @@ const Home = () => {
           </p>
         </>
       )}
-    </>
+    </motion.div>
   );
 };
 

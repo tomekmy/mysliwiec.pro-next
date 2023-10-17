@@ -1,9 +1,14 @@
 "use client";
 
-import { useState, type ReactNode } from "react";
+import { type ReactNode } from "react";
 import Logo from "@/components/logo";
 import Menu from "@/components/menu";
 import { AnimatePresence } from "framer-motion";
+import Image from "next/image";
+import mail from "@/assets/mail_icon_black.svg";
+import facebook from "@/assets/facebook_icon_black.svg";
+import linkedIn from "@/assets/linkedin_icon_black.svg";
+import gitHub from "@/assets/github_icon_black.svg";
 
 const Wrapper = ({ children }: { children: ReactNode }) => {
   return (
@@ -23,7 +28,20 @@ const Wrapper = ({ children }: { children: ReactNode }) => {
       <div className="grid grid-rows-[190px_1fr_80px] pl-5">
         <Logo />
         <Menu />
-        <div>bottom</div>
+        <div className="grid grid-cols-[40px_40px_40px_40px] items-center hover:[&>a]:animate-buzz [&>a]:w-[25px]">
+          <a href="mailto:tomek@mysliwiec.pro">
+            <Image src={mail} alt="E-mail" width={25} height={25} />
+          </a>
+          <a href="https://www.facebook.com/mysliwiec.pro/">
+            <Image src={facebook} alt="Facebook" width={25} height={25} />
+          </a>
+          <a href="https://www.linkedin.com/in/tomekmy/">
+            <Image src={linkedIn} alt="LinkedIn" width={25} height={25} />
+          </a>
+          <a href="https://github.com/tomekmy/">
+            <Image src={gitHub} alt="GitHub" width={25} height={25} />
+          </a>
+        </div>
       </div>
       <div className="grid grid-rows-[1fr_80px]">
         <main className="text-3xl w-[34rem] relative left-[17%] pt-44">
@@ -31,9 +49,13 @@ const Wrapper = ({ children }: { children: ReactNode }) => {
         </main>
         <div className="text-right">language</div>
       </div>
-      <div>
-        <div className="w-56 h-px absolute right-0 bottom-20 bg-gradient-to-l from-black via-black to-white" />
-        <div className="w-px h-52 absolute bottom-0 bg-gradient-to-t from-black via-black to-white" />
+      <div className="grid grid-rows-[200px_1fr_80px]">
+        <div />
+        <div />
+        <div>
+          <div className="w-56 h-px absolute right-0 bg-gradient-to-l from-black via-black to-white" />
+          <div className="w-px h-52 absolute bottom-0 bg-gradient-to-t from-black via-black to-white" />
+        </div>
       </div>
     </div>
   );
